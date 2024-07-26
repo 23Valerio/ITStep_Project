@@ -119,7 +119,7 @@ main {
   border-radius: 30px;
   padding-left: 100px;
   padding-right: 50%;
-  background: url(../../assets/images/beach.jpeg) 0 0/cover no-repeat;
+  background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
 }
 .dreams .title {
   font-size: 58px;
@@ -241,6 +241,6 @@ main {
 
 footer {
   height: 100px;
-  width: 100vw;
+  width: 100%;
   background-color: #000000;
 }
