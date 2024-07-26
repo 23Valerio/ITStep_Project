@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  transition: 250ms;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+padding: 25px 100px;
+}
