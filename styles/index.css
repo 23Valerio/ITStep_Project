@@ -169,6 +169,7 @@ main {
 
 .popular-destinations {
   margin-top: 30px;
+  width: 100%;
 }
 
 .destination-content {
@@ -199,6 +200,7 @@ main {
 }
 
 .destinations {
+  width: 100%;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-columns: repeat(2);
@@ -239,51 +241,86 @@ main {
   -webkit-text-stroke: 1px #7e7e7e;
 }
 
-.slider-container {
-  position: relative;
-  width: 600px;
-  height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
+button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.slider {
+.container {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
 }
 
-.slider img {
+.carousel-view {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+.item-list {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 25vh;
+  padding: 50px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  scroll-behavior: smooth;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
 }
 
-.prev-button,
-.next-button {
+/* Hide scrollbar for Chrome, Safari and Opera */
+.item-list::-webkit-scrollbar {
+  display: none;
+}
+
+.prev-btn {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  color: white;
+  cursor: pointer;
+  left: -20px;
 }
 
-.prev-button {
-  left: -30px;
+.next-btn {
+  cursor: pointer;
+  position: absolute;
+  right: -20px;
 }
 
-.next-button {
-  right: 10px;
+.item {
+  scroll-snap-align: center;
+  width: 33%;
+  height: 25vh;
+  background-size: cover;
+  border-radius: 8px;
 }
 
 footer {
