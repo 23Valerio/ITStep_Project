@@ -1,5 +1,6 @@
 main {
     font-family: "Golos";
+    padding: 25px 100px;
 }
 
 .dreams {
@@ -55,7 +56,7 @@ main {
     margin-top: 30px;
     width: 100%;
 }
-.destination-content {
+.block-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -66,20 +67,21 @@ main {
         font-weight: bold;
     }
 }
-.destination-title {
+.block-title {
     font-size: 48px;
     font-weight: bold;
 }
-.destination-text {
+.block-text,
+.news-subtitle {
     font-size: 16px;
     color: grey;
 }
 .destinations {
     width: 100%;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-columns: repeat(2);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    box-sizing: border-box;
     a {
         width: 100%;
         height: 25vh;
@@ -91,9 +93,9 @@ main {
             display: block;
             width: 100%;
             height: 100%;
-            background-size: cover;
+            object-fit: cover;
         }
-        div {
+        .count-of-tours {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -132,53 +134,72 @@ button{
   align-items: center;
   background-color: white;
 }
-
-.carousel-view {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.25s ease-in;
-}
-
- .item-list {
+.news-image {
+    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
     height: 25vh;
-  padding: 50px 10px;
-  display: flex;
-  gap: 20px;
-  scroll-behavior: smooth;
-  transition: all 0.25s ease-in;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  overflow: auto;
-  scroll-snap-type: x mandatory;
+    margin-bottom: 16px;
+}
+.news-subtitle {
+    margin-bottom: 12px;
+}
+.news-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.item-list::-webkit-scrollbar {
-  display: none;
+.offers {
+    height: 30vh;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 60px;
+    box-shadow: 5px 10px 10px 0px rgba(0,0,0,0.5);
 }
-
-.prev-btn {
-  position: absolute;
-//   background:  none;
-  cursor: pointer;
-  left: -20px;
+.offers-image {
+    flex: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
+.offers-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 50%;
+    box-sizing: border-box;
+    padding: 0px 100px;
 
-.next-btn {
-  cursor: pointer;
-  position: absolute;
-  right: -20px;
 }
-
-.item {
-  scroll-snap-align: center;
-  width: 33%;
-  height: 25vh;
-  background-size: cover;
-  border-radius:8px;
+.offers-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.offers-text {
+    font-size: 16px;
+    color: grey;
+    margin-bottom: 40px;
+}
+.subscribe {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    border: 1px solid #c5c5c5;
+    input[type="email"] {
+        padding: 5px 20px;
+    }
+    input[type="button"] {
+        background-color: #000000;
+        color: #fafafa;
+        padding: 5px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
 }
