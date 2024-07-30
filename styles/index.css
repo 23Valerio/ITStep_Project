@@ -41,7 +41,6 @@ body {
 }
 
 header {
-  margin-bottom: 25px;
   padding: 25px 100px;
 }
 
@@ -101,7 +100,7 @@ nav button:hover {
 
 main {
   font-family: "Golos";
-  padding: 25px 100px;
+  padding: 0px 100px 25px 100px;
 }
 
 .bold {
@@ -753,4 +752,93 @@ footer a {
   text-align: center;
   color: grey;
   padding-bottom: 20px;
+}
+
+.contact-us-img {
+  height: 30vh;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.contact-us-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contact-us-title {
+  position: absolute;
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.contacts {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.any-questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.any-questions-image {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  width: 100%;
+  position: relative;
+}
+
+.any-questions-image-content {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding-bottom: 50px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.any-questions-image-subtitle {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.any-questions-image-title {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.any-questions-btn {
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.any-questions-form {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
 }
