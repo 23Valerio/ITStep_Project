@@ -93,9 +93,7 @@ nav button {
   margin-left: 24px;
 }
 nav button:hover {
-  background-color: #ffffff;
-  color: #1a1a1a;
-  border: #1a1a1a solid 1px;
+  background-color: #444;
 }
 
 main {
@@ -791,24 +789,131 @@ footer a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.any-questions-image {
-  -webkit-box-flex: 30%;
-      -ms-flex: 30%;
-          flex: 30%;
-  width: 100%;
+.left-block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #000;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.content {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   position: relative;
 }
-
-.any-questions-image-content {
+.content div {
   position: absolute;
   left: 50%;
-  bottom: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  padding-bottom: 50px;
+  width: 100%;
+  margin-bottom: 30%;
+}
+
+.left-block {
   text-align: center;
+}
+
+.left-block .image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.left-block p {
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.6156862745);
+}
+
+.left-block h2 {
+  margin: 10px;
+  color: rgba(255, 255, 255, 0.6156862745);
+}
+
+.left-block button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.left-block button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.right-block {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding: 20px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact-header {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.contact-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+.contact-header p {
+  margin: 8px 0 0;
+  color: #777;
+}
+
+.contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -817,28 +922,133 @@ footer a {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-.any-questions-image-subtitle {
-  font-size: 16px;
-  color: #ffffff;
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
 }
 
-.any-questions-image-title {
-  font-size: 20px;
-  color: #ffffff;
-}
-
-.any-questions-btn {
-  background-color: #ffffff;
-  color: black;
+.form-group input,
+.form-group textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 10px;
-  border-radius: 12px;
-  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.any-questions-form {
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button[type=submit] {
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+button[type=submit]:hover {
+  background-color: #444;
+}
+
+.map {
+  padding-top: 50px;
+}
+.map iframe {
+  width: 100%;
+  -webkit-filter: grayscale(85%);
+          filter: grayscale(85%);
+}
+
+.contacts li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.contacts li i {
+  font-size: 64px;
+}
+
+.booking {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 200px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.booking .booking-img {
+  display: block;
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  width: 100%;
+}
+.booking .booking-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.booking .booking-right {
+  padding: 20px;
   -webkit-box-flex: 70%;
       -ms-flex: 70%;
           flex: 70%;
+  background-color: #000000;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking .booking-right .booking-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.booking .booking-right .booking-content .booking-subtitle {
+  font-size: 16px;
+  color: #fafafa;
+}
+.booking .booking-right .booking-content .booking-title {
+  font-size: 28px;
+  color: #fafafa;
+}
+.booking .booking-right .booking-btn {
+  margin: auto 0;
+}
+.booking .booking-right .booking-btn button {
+  background-color: #fafafa;
+  color: #000000;
+  border-radius: 12px;
+  padding: 20px 40px;
+}
+.booking .booking-right .booking-btn button:hover {
+  background-color: #444;
 }
