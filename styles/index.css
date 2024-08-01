@@ -204,7 +204,6 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  padding: 60px 30%;
   text-align: center;
 }
 .block-content a {
@@ -215,7 +214,8 @@ main {
 .block-title {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin: 25px 0px;
+  text-align: center;
 }
 
 .block-text,
@@ -416,20 +416,23 @@ button {
   position: relative;
 }
 .featured-destinations ul li .featured-image {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  overflow: hidden;
 }
 .featured-destinations ul li .featured-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .featured-destinations ul li .featured-content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -437,10 +440,11 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .purpose {
@@ -1051,4 +1055,292 @@ button[type=submit]:hover {
 }
 .booking .booking-right .booking-btn button:hover {
   background-color: #444;
+}
+
+.meet-our-team {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.our-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  gap: 20px;
+}
+.our-team li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+.our-team li .our-team-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.our-team li .our-team-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.our-team li .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.our-team li .position {
+  font-size: 16px;
+  text-align: center;
+}
+
+.margine-bottom {
+  margin-bottom: 100px;
+  padding: 5% 100px 0px 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: url(../../assets/images/beach7.jpg) 0 0/cover no-repeat;
+}
+.margine-bottom img {
+  width: 58px;
+  color: #fafafa;
+}
+.margine-bottom .title {
+  -webkit-text-stroke: 0px #1a1a1a;
+}
+
+.explore {
+  padding: 40px;
+}
+.explore ul {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.explore ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.explore ul li:nth-child(2), .explore ul li:nth-child(3) {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+.explore ul li p[class=bold] {
+  font-size: 40px;
+}
+
+.destination {
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+.destination li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+  height: 30vh;
+}
+.destination li .destination-image {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+.destination li .destination-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.destination li .destination-image .from {
+  position: absolute;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+.destination li .destination-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.destination li .destination-content .destination-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.destination li .destination-content .destination-subtitle {
+  font-size: 16px;
+  color: gray;
+}
+.destination li .destination-content .bonus p {
+  margin-bottom: 10px;
+}
+.destination li .destination-content .destination-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  max-height: 80px;
+}
+.destination li .destination-content .destination-icons li {
+  max-width: 80px;
+  max-height: 100%;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.destination li .destination-content .destination-icons li p {
+  font-size: 14px;
+  color: gray;
+}
+.destination li .destination-content .destination-icons li p i {
+  font-size: 24px;
+}
+.destination li .destination-content button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+.destination li .destination-content button:hover {
+  background-color: #444;
+}
+.destination li:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.destination li:nth-child(even) .destination-image .from {
+  bottom: 20px;
+  left: 20px;
+}
+.destination li:nth-child(odd) .destination-image .from {
+  top: 20px;
+  right: 20px;
+}
+
+.margine-top {
+  margin-top: 50px;
+  height: 50vh !important;
+}
+
+.adventure {
+  padding-top: 25px;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.adventure li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+.adventure li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.adventure .adventure-content {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.adventure .adventure-content img {
+  height: 28px;
+  width: 38px;
+}
+.adventure .adventure-content p {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  word-break: keep-all;
+  text-align: center;
+}
+.adventure .adventure-content button {
+  background-color: #fff;
+  color: black;
+  padding: 10px 40px;
+  border-radius: 12px;
 }
