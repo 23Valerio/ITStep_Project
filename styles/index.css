@@ -1109,7 +1109,7 @@ button[type=submit]:hover {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: url(../../assets/images/beach7.jpg) 0 0/cover no-repeat;
+  background: url(../assets/images/beach7.jpg) 0 0/cover no-repeat;
 }
 .margine-bottom img {
   width: 58px;
