@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"); // roboto font
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"); // стороннее обнуление
 @import "./utils/root"; // руты
+@import "./utils/Mixins"; // миксины
 @import "./utils/App"; // собственное обнуление
 @import "./components/Header"; // header
 @import "./components/Main"; // main

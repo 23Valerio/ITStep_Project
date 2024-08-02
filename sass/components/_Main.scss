@@ -18,14 +18,11 @@ main {
     margin-bottom: 50px;
     background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
     .title {
-        font-size: 58px;
-        font-weight: bold;
-        color: #fafafa;
+        @include styleTitle(58px, bold, #fafafa);
         -webkit-text-stroke: 1px #1a1a1a;
     }
     .text {
-        color: #fafafa;
-        font-size: 16px;
+        @include styleTitle(16px, none, #fafafa);
     }
 }
 .search-bar {
@@ -78,8 +75,7 @@ main {
     margin-bottom: 20px;
     margin-top: 20px;
     a {
-        font-size: 16px;
-        font-weight: bold;
+        @include styleTitle(16px, bold, #0000);
     }
 }
 .block-title {
@@ -93,6 +89,11 @@ main {
     font-size: 16px;
     color: grey;
 }
+.news-content {
+    &:hover {
+        @include hoverBlock;
+    }
+}
 .destinations {
     width: 100%;
     display: grid;
@@ -105,21 +106,19 @@ main {
         position: relative;
         overflow: hidden;
         border-radius: 20px;
-        
+        &:hover {
+            @include hoverBlock;
+        }
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            @include styleImage(100%, 100%, cover);
         }
         p {
             position: absolute;
-            color: #fafafa;
             bottom: 10px;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 40px;
-            font-weight: bold;
             -webkit-text-stroke: 1px #7e7e7e;
+            @include styleTitle(40px, bold, #fafafa);
         }
     }
 }
@@ -127,8 +126,7 @@ main {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 16px;
-    color: #fafafa;
+    @include styleTitle(16px, none, #fafafa);
     background-color: #1a1a1a;
     padding: 4px 12px;
     border-radius: 8px;
@@ -136,7 +134,7 @@ main {
 button{
     border: none;
     cursor: pointer;
-    color: white;
+    color: #fafafa;
     background: none;
     transition: all .3s ease-in-out;
 }
@@ -150,9 +148,7 @@ button{
 }
 .news-image {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @include styleImage(100%, 100%, cover);
     border-radius: 20px;
     height: 25vh;
     margin-bottom: 16px;
@@ -161,8 +157,7 @@ button{
     margin-bottom: 12px;
 }
 .news-title {
-    font-size: 20px;
-    font-weight: bold;
+    @include styleTitle(20px, bold, #1a1a1a);
     margin-bottom: 20px;
 }
 
@@ -177,9 +172,7 @@ button{
 .offers-image {
     flex: 50%;
     img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        @include styleImage(100%, 100%, cover);
     }
 }
 .offers-content {
@@ -191,13 +184,11 @@ button{
     padding: 0px 100px;
 }
 .offers-title {
-    font-size: 32px;
-    font-weight: bold;
+    @include styleTitle(32px, bold, #1a1a1a);
     margin-bottom: 20px;
 }
 .offers-text {
-    font-size: 16px;
-    color: grey;
+    @include styleTitle(16px, none, grey);
     margin-bottom: 40px;
 }
 .subscribe {
@@ -209,10 +200,9 @@ button{
         padding: 5px 20px;
     }
     input[type="button"] {
-        background-color: #000000;
-        color: #fafafa;
+        background-color: #1a1a1a;
+        @include styleTitle(16px, none, #fafafa);
         padding: 5px 20px;
-        font-size: 16px;
         border-radius: 8px;
     }
 }
@@ -234,9 +224,7 @@ button{
                 flex: 0 0 60%;
                 overflow: hidden;
                 img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    @include styleImage(100%, 100%, cover);
                     object-position: center;
                 }
             }
@@ -247,6 +235,9 @@ button{
                 justify-content: space-around;
                 padding: 20px;
                 box-sizing: border-box;
+            }
+            &:hover {
+                @include hoverBlock;
             }
         }
     }
@@ -285,8 +276,7 @@ button{
                 width: 64px;
             }
             .luxury-title {
-                font-size: 24px;
-                font-weight: bold;
+                @include styleTitle(24px, bold, #1a1a1a);
             }
             .luxury-subtitle {
                 font-size: 16px;
@@ -319,7 +309,6 @@ button{
         .slide {
             box-sizing: border-box;
             text-align: center;
-            // padding: 20px;
             font-size: 24px;
         }
     }
@@ -341,7 +330,6 @@ button{
         justify-content: center;      
     }
 }
-
 .slider-three {
        .slide {
         flex: 1 0 calc(33.333% - 17.5px);
@@ -356,9 +344,7 @@ button{
         background-color: #ffffff77;
         border-radius: 50%;
     }
-
 }
-
 .slide-img {
     img {
         border-radius: 50%;
@@ -371,48 +357,37 @@ button{
     font-size: 16px;
     padding: 0px 20%;
 }
-
-.prev {
-    left: 0;
-    
-}
-.next {
-    right: 0;
-}
-
+.prev { left: 0; }
+.next { right: 0; }
 
 .top-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @include styleImage(100%, 100%, cover);
     border-radius: 10px;
 }
 .top-block {
     position: relative;
+    &:hover {
+        @include hoverBlock;
+    }
 }
 .top-title,
 .top-offer {
     position: absolute;
     bottom: 0;
-    color: #ffffff;
-    font-weight: bold;
     padding: 10px;
 }
-
 .top-title {
     left: 50%;
     transform: translateX(-50%); 
-    bottom: 0;
-    
+    @include styleTitle(24px, bold, #fafafa);
 }
 .top-offer {
-    position: absolute;
     height: max-content;
     top: 20px;
     right: 20px;
-    font-size: 14px;
-    background-color: #474747;
+    background-color: #1a1a1a;
     padding: 4px 12px;
     border-radius: 8px;
+    @include styleTitle(14px, bold, #fafafa);
 }
 

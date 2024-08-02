@@ -1,0 +1,17 @@
+@mixin styleTitle($fsize, $fweight, $fcolor) {
+    font-size: $fsize;
+    font-weight: $fweight;
+    color: $fcolor;
+  }
+
+@mixin styleImage($width, $height, $fobject) {
+   width: $width;
+   height: $height;
+   object-fit: $fobject;
+}
+
+@mixin hoverBlock {
+    transition: 500ms;
+    transform: scale(1.05);
+    box-shadow: 5px 10px 10px 0px rgba(0,0,0,0.5);
+}
