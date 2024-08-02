@@ -1,5 +1,5 @@
 main {
-    font-family: "Golos";
+    font-family: "Roboto";
     padding: 0px 100px 25px 100px;
 }
 .bold {
@@ -15,6 +15,7 @@ main {
     border-radius: 30px; 
     padding-left: 100px;
     padding-right: 50%;
+    margin-bottom: 50px;
     background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
     .title {
         font-size: 58px;
@@ -39,7 +40,7 @@ main {
     ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         li {
             display: flex;
@@ -55,7 +56,7 @@ main {
             button {
                 background-color: #1a1a1a;
                 color: #fafafa;
-                padding: 10px;
+                padding: 10px 20px;
                 border-radius: 12px;
                 box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
                 i {
@@ -74,6 +75,8 @@ main {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
     a {
         font-size: 16px;
         font-weight: bold;
@@ -82,7 +85,7 @@ main {
 .block-title {
     font-size: 48px;
     font-weight: bold;
-    margin: 25px 0px;
+    margin: 25px 0px 20px 0px;
     text-align: center;
 }
 .block-text,
@@ -391,7 +394,7 @@ button{
 .top-offer {
     position: absolute;
     bottom: 0;
-    color: #fafafa;
+    color: #ffffff;
     font-weight: bold;
     padding: 10px;
 }
@@ -399,7 +402,7 @@ button{
 .top-title {
     left: 50%;
     transform: translateX(-50%); 
-    top: 0;
+    bottom: 0;
     
 }
 .top-offer {
@@ -412,3 +415,4 @@ button{
     padding: 4px 12px;
     border-radius: 8px;
 }
+

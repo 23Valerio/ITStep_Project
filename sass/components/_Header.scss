@@ -37,3 +37,48 @@ nav {
     }
   }
 }
+
+// popover
+
+.modal {
+  margin: auto auto;
+  padding: 20px;
+  border-radius: 20px;
+  form {
+     display: flex;
+     flex-direction: column;
+     ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        li {
+          width: 100%;
+          label {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 25px;
+              gap: 40px;
+              input {
+                 font-size: 20px;
+                 border: #373737 1px solid;
+                 padding: 10px;
+                 border-radius: 10px;
+                 color: #373737;
+              }
+           }
+        }
+     }
+     input[type=submit] {
+        background-color: #1a1a1a;
+        padding: 10px;
+        font-size: 25px;
+        border-radius: 10px;
+        color: #fafafa;
+        margin-top: 20px;
+        &:hover {
+          background-color: #444;
+        }
+     }
+  }
+}

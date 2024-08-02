@@ -10,7 +10,7 @@
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <title>Home</title>
+    <title>Tours</title>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -28,10 +28,28 @@
           <li><a href="contacts.html">Contact</a></li>
         </ul>
         <div class="login">
-          <span>Log in</span>
-          <button>Sign Up</button>
+          <span>Sign Up</span>
+          <button class="modal-form" popovertarget="my-popover">Log in</button>
+          <div class="modal" id="my-popover" popover>
+            <form>
+              <ul>
+                <li>
+                  <label>
+                    <span>Username or Email</span>
+                    <input type="text" placeholder="username/email">
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <span>Password</span>
+                    <input placeholder="password" required type="password" name="password">
+                  </label>
+                </li>
+              </ul>
+              <input type="submit" value="Log In">
+            </form>
+          </div>
         </div>
-
       </nav>
     </header>
     <main>

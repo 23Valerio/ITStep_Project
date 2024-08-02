@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 :root {
   --black: #1a1a1a;
@@ -96,8 +95,67 @@ nav button:hover {
   background-color: #444;
 }
 
+.modal {
+  margin: auto auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.modal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.modal form ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.modal form ul li {
+  width: 100%;
+}
+.modal form ul li label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  gap: 40px;
+}
+.modal form ul li label input {
+  font-size: 20px;
+  border: #373737 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  color: #373737;
+}
+.modal form input[type=submit] {
+  background-color: #1a1a1a;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  color: #fafafa;
+  margin-top: 20px;
+}
+.modal form input[type=submit]:hover {
+  background-color: #444;
+}
+
 main {
-  font-family: "Golos";
+  font-family: "Roboto";
   padding: 0px 100px 25px 100px;
 }
 
@@ -122,6 +180,7 @@ main {
   border-radius: 30px;
   padding-left: 100px;
   padding-right: 50%;
+  margin-bottom: 50px;
   background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
 }
 .dreams .title {
@@ -154,9 +213,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -181,7 +239,7 @@ main {
 .search-bar ul li button {
   background-color: #1a1a1a;
   color: #fafafa;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 12px;
   -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -205,6 +263,8 @@ main {
           flex-direction: column;
   gap: 20px;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .block-content a {
   font-size: 16px;
@@ -214,7 +274,7 @@ main {
 .block-title {
   font-size: 48px;
   font-weight: bold;
-  margin: 25px 0px;
+  margin: 25px 0px 20px 0px;
   text-align: center;
 }
 
@@ -614,7 +674,7 @@ button {
 .top-offer {
   position: absolute;
   bottom: 0;
-  color: #fafafa;
+  color: #ffffff;
   font-weight: bold;
   padding: 10px;
 }
@@ -623,7 +683,7 @@ button {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 0;
+  bottom: 0;
 }
 
 .top-offer {
