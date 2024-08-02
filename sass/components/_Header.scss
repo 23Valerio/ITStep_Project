@@ -11,21 +11,21 @@ header {
   padding: 25px 100px;
 }
 .active {
-  @include styleTitle (26px, bold, #1a1a1a);
-  border-bottom: 1px solid #1a1a1a;
+  @include styleTitle (var(--fs28), bold, var(--black));
+  border-bottom: 1px solid var(--black);
 }
 nav {
   display: flex;
   gap: 10px;
   justify-content: space-between;
-  @include styleTitle (24px, none, #1a1a1a);
+  @include styleTitle (var(--fs20), none, var(--black));
   a {
     display: flex;
     gap: 5px;
     align-items: center;
     p {
       align-items: center;
-      font-weight: bold;
+      @include styleTitle (var(--fs28), bold, var(--black));
     }
     img {
       width: 100%;
@@ -38,8 +38,8 @@ nav {
     align-items: center;
   }
   button {
-    color: #fafafa;
-    background-color: #1a1a1a;
+    color: var(--white);
+    background-color: var(--black);
     padding: 10px 20px;
     border-radius: 12px;
     margin-left: 24px;
@@ -72,10 +72,10 @@ nav {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              font-size: 25px;
+              font-size: var(--fs28);
               gap: 40px;
               input {
-                 font-size: 20px;
+                 font-size: var(--fs20);
                  border: #373737 1px solid;
                  padding: 10px;
                  border-radius: 10px;
@@ -89,14 +89,68 @@ nav {
         }
      }
      input[type=submit] {
-        background-color: #1a1a1a;
+        background-color: var(--black);
         padding: 10px;
-        @include styleTitle (24px, none, #fafafa);
+        @include styleTitle (var(--fs28), none, var(--white));
         border-radius: 10px;
         margin-top: 20px;
         &:hover {
           background-color: #444;
         }
      }
+  }
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+.burger-lines {
+  width: 100%;
+  height: 3px;
+  background-color: var(--black);
+}
+
+@media (max-width: 320px) {
+  header {
+    padding: 15px;
+  }
+  nav {
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+    z-index: 100;
+  }
+  .nav-links li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: var(--white);
+  }
+  .nav-links.nav-active {
+    display: flex;
   }
 }

@@ -8,13 +8,13 @@ footer {
 
 .dark-block {
     position: relative;
-    background-color: #000000;
+    background-color: var(--black);
     padding: 30px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 32px;
+    font-size: var(--fs36);
     img {
         position: absolute;
     }
@@ -32,15 +32,15 @@ footer {
     }
 }
 .question {
-   p {color: #fafafa;}
+   p {color: var(--white);}
    margin-bottom: 16px;   
 }
 .phone {
-    p {color: #fafafa;} 
+    p {color: var(--white);} 
     font-weight: bold; 
 }
 .info-block {
-    margin: 60px 120px;
+    padding: 60px 120px;
     ul {
         display: flex;
         li {
@@ -75,4 +75,14 @@ footer {
     text-align: center;
     color: grey;
     padding-bottom: 20px;
+}
+
+@media (max-width: 320px) {
+    footer {
+        .info-block {
+            ul {
+                flex-direction: column;
+            }
+        }
+    }
 }

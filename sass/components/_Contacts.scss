@@ -9,10 +9,11 @@
 }
 .contact-us-title {
     position: absolute;
-    @include styleTitle(60px, bold, #fafafa);
+    @include styleTitle(var(--fs48), bold, var(--white));
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 .contacts {
     width: 100%;
@@ -23,14 +24,13 @@
     display: flex;
     width: 100%;
     height: auto;
-    background-color: #fafafa;
+    background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
  }
 .left-block {
     flex: 1;
-    background-color: #1a1a1a;
-    color: #fafafa;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,8 +72,8 @@
 
 .left-block button {
     padding: 10px 20px;
-    background-color: #fff;
-    @include styleTitle(16px, bold, #1a1a1a);
+    background-color: var(--white);
+    @include styleTitle(16px, bold, var(--black));
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -82,7 +82,7 @@
 
 .left-block button:hover {
     background-color: #444;
-    color: #fff;
+    color: var(--white);
 }
 
 .right-block {
@@ -140,8 +140,8 @@
 
 button[type="submit"] {
     padding: 12px;
-    background-color: #000;
-    @include styleTitle(16px, bold, #fafafa);
+    background-color: var(--black);
+    @include styleTitle(16px, bold, var(--white));
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -157,5 +157,31 @@ button[type="submit"]:hover {
     iframe {
         width: 100%;
         filter: grayscale(85%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .right-block {
+        flex: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-us-img {
+        height: 10vh;
+    }
+}
+
+@media (max-width: 320px) {
+    .any-questions {
+        flex-direction: column;
+        margin-top: 20px;
+        .right-block {
+            .contact-form {
+                .form-group {
+                    flex-direction: column;
+                }
+            }
+        }
     }
 }

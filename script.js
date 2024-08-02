@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('.slider');
 
@@ -7,15 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevButton = slider.querySelector('.prev');
         const nextButton = slider.querySelector('.next');
         let slideWidth;
-
-        // Определяем тип слайдера
-        if (slider.classList.contains('slider-one')) {
-            slideWidth = 100; // Один слайд виден
-        } else if (slider.classList.contains('slider-three')) {
-            slideWidth = 100 / 3; // Три слайда видны
-        }
-
         let currentIndex = 0;
+
+        function updateSlideWidth() {
+            if (slider.classList.contains('slider-one')) {
+                slideWidth = 100; // Один слайд виден
+            } else if (slider.classList.contains('slider-three')) {
+                if (window.innerWidth <= 320) {
+                    slideWidth = 100; // Один слайд виден при ширине экрана до 320px
+                } else {
+                    slideWidth = 100 / 3; // Три слайда видны
+                }
+            }
+        }
 
         function updateSlidePosition() {
             const offset = -currentIndex * slideWidth;
@@ -30,10 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentIndex = 0;
                 }
             } else if (slider.classList.contains('slider-three')) {
-                if (currentIndex < slides.length - 3) {
-                    currentIndex++;
+                if (window.innerWidth <= 320) {
+                    if (currentIndex < slides.length - 1) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
                 } else {
-                    currentIndex = 0;
+                    if (currentIndex < slides.length - 3) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
                 }
             }
             updateSlidePosition();
@@ -47,10 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentIndex = slides.length - 1;
                 }
             } else if (slider.classList.contains('slider-three')) {
-                if (currentIndex > 0) {
-                    currentIndex--;
+                if (window.innerWidth <= 320) {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = slides.length - 1;
+                    }
                 } else {
-                    currentIndex = slides.length - 3;
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = slides.length - 3;
+                    }
                 }
             }
             updateSlidePosition();
@@ -58,8 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nextButton.addEventListener('click', goToNextSlide);
         prevButton.addEventListener('click', goToPrevSlide);
+        window.addEventListener('resize', () => {
+            updateSlideWidth();
+            updateSlidePosition();
+        });
 
-        // Initial position
+        // Initial setup
+        updateSlideWidth();
         updateSlidePosition();
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+    });
+})

@@ -21,8 +21,8 @@
             }
             .from {
                 position: absolute;
-                @include styleTitle(16px, none, #fafafa);
-                background-color: #1a1a1a;
+                @include styleTitle(var(--fs16), none, var(--white));
+                background-color: var(--black);
                 padding: 4px 12px;
                 border-radius: 8px;
             }
@@ -33,10 +33,10 @@
             flex-direction: column;
             justify-content: space-between;
             .destination-title {
-                @include styleTitle(28px, bold, #1a1a1a);
+                @include styleTitle(var(--fs28), bold, var(--black));
             }
             .destination-subtitle {
-                @include styleTitle(16px, none, gray);
+                @include styleTitle(var(--fs16), none, gray);
             }
             .bonus {
                 p {
@@ -59,17 +59,18 @@
                     border-radius: 10px;
                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                     p {
-                        @include styleTitle(14px, none, gray);
+                        @include styleTitle(var(--fs16), none, gray);
                         i {
-                            font-size: 24px;
+                            font-size: 20px;
                         }
                     }
                 }
             }
             button {
+                margin-left: auto;
                 width: max-content;
-                @include styleTitle(16px, none, #fafafa);
-                background-color: #000000;
+                @include styleTitle(var(--fs16), normal, var(--white));
+                background-color: var(--black);
                 padding: 20px 40px;
                 border-radius: 12px;
                 &:hover {
@@ -98,6 +99,53 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .bonus {
+        font-size: var(--fs16);
+        p {
+            margin-bottom: 0px !important;
+        }
+    }
+    .destination {
+        li {
+            .destination-content {
+                button {
+                    padding: 10px 20px;
 
+                }
+            }
+        }
+    }
 
+    .destination-icons {
+        li {display: none !important;}
+       
+    }
+
+}
+
+@media (max-width: 320px) {
+    .contact-us-img { height: 15vh;}
+    .destination {
+        gap: 5px;
+        li {
+            gap: 5px;
+            .destination-content {
+                justify-content: center;
+                gap: 10px;
+                .destination-subtitle,
+                .bonus {
+                    display: none;
+                }
+            }
+            .destination-image {
+                border-radius: 10px;
+                box-sizing: border-box;
+                .from {
+                    display: none;
+                }
+            }
+        }
+    }
+}
 

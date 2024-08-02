@@ -1,3 +1,4 @@
+
 main {
     font-family: "Roboto";
     padding: 0px 100px 25px 100px;
@@ -18,21 +19,23 @@ main {
     margin-bottom: 50px;
     background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
     .title {
-        @include styleTitle(58px, bold, #fafafa);
-        -webkit-text-stroke: 1px #1a1a1a;
+        @include styleTitle(60px, bold, var(--white));
+        -webkit-text-stroke: 1px var(--black);
     }
     .text {
-        @include styleTitle(16px, none, #fafafa);
+        @include styleTitle(var(--fs20), none, var(--white));
     }
 }
 .search-bar {
     position: absolute;
-    background-color: #fafafa;
+    background-color: var(--white);
     bottom: -30px;
-    font-size: 16px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: var(--fs16);
     padding: 20px 24px;
     border-radius: 20px;
-    width: calc(100% - 250px);
+    width: 80%;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
     ul {
         display: flex;
@@ -51,13 +54,13 @@ main {
                 left: 0;
             }
             button {
-                background-color: #1a1a1a;
-                color: #fafafa;
+                background-color: var(--black);
+                color: var(--white);
                 padding: 10px 20px;
                 border-radius: 12px;
                 box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
                 i {
-                    color: #fafafa;
+                    color: var(--white);
                 }
             }
         }
@@ -75,18 +78,17 @@ main {
     margin-bottom: 20px;
     margin-top: 20px;
     a {
-        @include styleTitle(16px, bold, #0000);
+        @include styleTitle(var(--fs16), bold, var(--black));
     }
 }
 .block-title {
-    font-size: 48px;
-    font-weight: bold;
+    @include styleTitle(var(--fs48), bold, var(--black));
     margin: 25px 0px 20px 0px;
     text-align: center;
 }
 .block-text,
 .news-subtitle {
-    font-size: 16px;
+    font-size: var(--fs16);
     color: grey;
 }
 .news-content {
@@ -118,7 +120,7 @@ main {
             left: 50%;
             transform: translate(-50%, -50%);
             -webkit-text-stroke: 1px #7e7e7e;
-            @include styleTitle(40px, bold, #fafafa);
+            @include styleTitle(var(--fs48), bold, var(--white));
         }
     }
 }
@@ -126,15 +128,15 @@ main {
     position: absolute;
     top: 20px;
     right: 20px;
-    @include styleTitle(16px, none, #fafafa);
-    background-color: #1a1a1a;
+    @include styleTitle(var(--fs16), none, var(--white));
+    background-color: var(--black);
     padding: 4px 12px;
     border-radius: 8px;
 }
 button{
     border: none;
     cursor: pointer;
-    color: #fafafa;
+    color: var(--white);
     background: none;
     transition: all .3s ease-in-out;
 }
@@ -144,7 +146,7 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--white);
 }
 .news-image {
     display: block;
@@ -157,7 +159,7 @@ button{
     margin-bottom: 12px;
 }
 .news-title {
-    @include styleTitle(20px, bold, #1a1a1a);
+    @include styleTitle(var(--fs20), bold, var(--black));
     margin-bottom: 20px;
 }
 
@@ -184,11 +186,11 @@ button{
     padding: 0px 100px;
 }
 .offers-title {
-    @include styleTitle(32px, bold, #1a1a1a);
+    @include styleTitle(var(--fs28), bold, var(--black));
     margin-bottom: 20px;
 }
 .offers-text {
-    @include styleTitle(16px, none, grey);
+    @include styleTitle(var(--fs16), none, grey);
     margin-bottom: 40px;
 }
 .subscribe {
@@ -200,8 +202,8 @@ button{
         padding: 5px 20px;
     }
     input[type="button"] {
-        background-color: #1a1a1a;
-        @include styleTitle(16px, none, #fafafa);
+        background-color: var(--black);
+        @include styleTitle(var(--fs16), none, var(--white));
         padding: 5px 20px;
         border-radius: 8px;
     }
@@ -244,18 +246,17 @@ button{
 }
 
 .purpose {
-    font-size: 20px;
-    font-weight: bold;
+    @include styleTitle(var(--fs20), bold, var(--black));
 }
 .rank {
-    font-size: 14px;
+    font-size: var(--fs16);
     span {
         white-space: nowrap;
     } 
 }
 .price {color: grey;}
 .old-price {
-    font-size: 16px;
+    font-size: var(--fs16);
     opacity: 0.5;
     text-decoration: line-through;
 }
@@ -276,13 +277,13 @@ button{
                 width: 64px;
             }
             .luxury-title {
-                @include styleTitle(24px, bold, #1a1a1a);
+                @include styleTitle( var(--fs20), bold, var(--black));
             }
             .luxury-subtitle {
-                font-size: 16px;
+                font-size: var(--fs16);
             }
             .luxury-text {
-                font-size: 16px;
+                font-size: var(--fs16);
                 opacity: 0.8;
             }
        }
@@ -377,17 +378,222 @@ button{
     padding: 10px;
 }
 .top-title {
+    width: 80%;
     left: 50%;
     transform: translateX(-50%); 
-    @include styleTitle(24px, bold, #fafafa);
+    @include styleTitle(var(--fs28), bold, var(--white));
 }
 .top-offer {
     height: max-content;
     top: 20px;
     right: 20px;
-    background-color: #1a1a1a;
+    background-color: var(--black);
     padding: 4px 12px;
     border-radius: 8px;
-    @include styleTitle(14px, bold, #fafafa);
+    @include styleTitle(14px, bold, var(--white));
 }
 
+// adaptive
+
+@media (max-width: 1024px) {
+    header,
+    main,
+    footer {
+        --fs36: 30px;
+        --fs28: 20px;
+        --fs20: 16px;
+        --fs16: 12px;
+    }
+    header,
+    main {        
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    footer {
+        .info-block { padding: 30px 30px; }
+    }
+    header {
+        .modal-form {
+            margin-left: 10px;
+        }
+    }
+    .dreams {
+        height: 30vh;
+        padding: 20px 50px;
+        .title{
+            font-size: var(--fs36);
+        }
+    }
+    .top-offer,
+    .count-of-tours {
+        top: 10px;
+        right: 10px;
+    }
+    .luxury {
+        ul {
+            gap: 10px;
+           li {
+                gap: 10px;
+                padding: 20px;
+            }
+        }
+    }
+    .featured-destinations {
+        ul {
+            gap: 20px;
+            li {
+                .featured-image {
+                    flex: 0 0 50%;
+                }
+                .featured-content {
+                    flex: 0 0 50%;
+                    padding-top: 10px;
+                    .price {
+                        font-size: var(--fs16);
+                    }
+                }
+            }
+        }
+    }
+    .bonus {
+        font-size: var(--fs16);
+        p {
+            margin-bottom: 0px !important;
+        }
+    }
+    .destination {
+        .destination-content {
+            .destination-icon {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dreams {
+        height: 20vh;
+    }
+    .popular-destinations{
+        .destinations {
+            a {
+                height: 20vh;
+                p {
+                    font-size: var(--fs36);
+                }
+            }
+        }
+    }
+    .featured-destinations {
+        ul {
+            height: 25vh;
+        }
+    }
+    .offers {
+        height: 20vh;
+        .offers-content {
+            padding: 0px 50px;
+        }
+    }
+    .news {
+        .destinations {
+            .news-content {
+                .news-image {
+                    height: 20vh;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    header {
+        nav {
+            ul {
+                display: none;
+            }
+        }
+    }
+    header,
+    main,
+    footer {
+        --fs48: 36px;
+        --fs36: 24px;
+        --fs28: 16px;
+        --fs20: 12px;
+        --fs16: 10px;
+    }
+    header,
+    main {        
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .dreams {
+        height: 15vh;
+        margin-bottom: 20px;
+        .search-bar {
+            display: none;
+        }
+    }
+    .popular-destinations {
+        .block-content {
+            gap: 5px;
+            .block-title {
+                margin: 0px;
+            }
+        }
+        .destinations {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .top-destinations {
+        margin: 20px 0;
+    }
+    .slider-three .slide {
+        flex: 0 0 100%; 
+    }
+    .luxury {
+        display: none;
+    }
+    .featured-destinations {
+        .block-content {
+            gap: 10px;
+            .block-title {
+                margin: 10px 0px;
+            }
+        }
+        ul {
+            flex-direction: column;
+            height: auto;
+        }
+    }
+    .offers {
+        .offers-image {
+            display: none;
+        }
+        .offers-content {
+            width: 100%;
+            padding: 20px 10px;
+            .offers-title,
+            .offers-text {
+                margin-bottom: 10px;
+            }
+            .subscribe {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    .news {
+        .block-content {
+            .block-title {
+                margin: 0px;
+            }
+        }
+        .destinations {
+            grid-template-columns: 1fr;
+        }
+
+    }
+}

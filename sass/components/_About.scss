@@ -27,7 +27,7 @@
     .booking-right {
         padding: 20px;
         flex: 70%;
-        background-color: #000000;
+        background-color: var(--black);
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -36,17 +36,17 @@
             flex-direction: column;
             justify-content: center;
             .booking-subtitle {
-                @include styleTitle(16px, none, #fafafa);
+                @include styleTitle(var(--fs16), none, var(--white));
             }
             .booking-title {
-                @include styleTitle(28px, bold, #fafafa);
+                @include styleTitle(var(--fs28), bold, var(--white));
             }
         }
         .booking-btn {
             margin: auto 0;
             button {
-                @include styleTitle(16px, bold, #1a1a1a);
-                background-color: #fafafa;
+                @include styleTitle(var(--fs16), bold, var(--black));
+                background-color: var(--white);
                 border-radius: 12px;
                 padding: 20px 40px;
                 &:hover {
@@ -69,25 +69,23 @@
     li {
         flex: 1;
         height: 100%;
-
         .our-team-img {
             height: 100%;
             width: 100%;
             border-radius: 20px;
             overflow: hidden;
-            
             img {
                 @include styleImage(100%, 100%, cover);
                 filter: grayscale(100%);
             }
         }
         .name {
-            @include styleTitle(20px, bold, inerhit);
+            @include styleTitle(var(--fs20), bold, inerhit);
             text-align: center;
             padding: 10px;
         }
         .position {
-            font-size: 16px;
+            font-size: var(--fs16);
             text-align: center;
         }
     }
@@ -100,10 +98,11 @@
     background: url(../assets/images/beach7.jpg) 0 0/cover no-repeat;
     img {
         width: 58px;
-        color: #fafafa;
+        color: var(--white);
     }
     .title {
-         -webkit-text-stroke: 0px #1a1a1a;
+         -webkit-text-stroke: 0px var(--black);
+         text-align: center;
     }
 }
 .explore {
@@ -121,8 +120,49 @@
                 border-right: 1px solid grey;
             }
             p[class="bold"] {
-                font-size: 40px;
+                font-size: var(--fs36)
             }
         }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .explore {
+        padding: 20px;
+    }
+    .booking {
+        .booking-right {
+            .booking-btn {
+                button {
+                    padding: 10px 20px;
+                }
+            }
+        } 
+    }
+}
+@media (max-width: 320px) {
+    .booking {
+        margin-top: 20px;
+    }
+    .meet-our-team {
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 5px;
+            .name {
+                padding: 5px;
+            }
+
+        }
+    }
+    .dreams {
+        white-space: nowrap;
+        .title {
+            font-size: var(--fs28);
+        }
+    }
+    .margine-bottom {
+        margin-bottom: 20px;
     }
 }

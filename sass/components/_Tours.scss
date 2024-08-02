@@ -1,8 +1,12 @@
 .margine-top {
     margin-top: 50px;
-    height: 50vh !important;
 }
-
+.tour768 {
+    display: block;
+}
+.fs16 {
+    font-size: var(--fs16);
+}
 .adventure {
     padding-top: 25px;
     height: 40vh;
@@ -34,15 +38,47 @@
             width: 38px;
         }
         p {
-            @include styleTitle(28px, bold, #fafafa);
+            @include styleTitle(var(--fs28), bold, var(--white));
             word-break: keep-all;
             text-align: center;
         }
         button {
-            background-color: #fff;
-            color: black;
+            background-color: var(--white);
+            color: var(--black);
             padding: 10px 40px;
             border-radius: 12px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-us-img {
+        height: 20vh;
+    }
+    .adventure {
+        height: 20vh;
+    }
+    .margine-top {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .contact-us-img { height: 15vh;}
+    .adventure {
+    flex-direction: column;
+    height: max-content;
+    li {
+        height: 20vh;
+        overflow: hidden;
+        width: 100%;
+        img {
+            box-sizing: border-box;
+            @include styleImage(100%, 100%, cover);
+            }
+        .adventure-content {
+            width: 100%;
+            }
         }
     }
 }
