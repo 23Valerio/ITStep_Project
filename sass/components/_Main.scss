@@ -14,12 +14,12 @@ main {
     justify-content: center;
     height: 50vh;
     border-radius: 30px; 
-    padding-left: 100px;
+    padding-left: 10%;
     padding-right: 50%;
     margin-bottom: 50px;
     background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
     .title {
-        @include styleTitle(60px, bold, var(--white));
+        @include styleTitle(50px, bold, var(--white));
         -webkit-text-stroke: 1px var(--black);
     }
     .text {
@@ -179,11 +179,11 @@ button{
 }
 .offers-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     flex: 50%;
     box-sizing: border-box;
-    padding: 0px 100px;
+    padding: 2% 5%;
 }
 .offers-title {
     @include styleTitle(var(--fs28), bold, var(--black));

@@ -298,13 +298,13 @@ main {
           justify-content: center;
   height: 50vh;
   border-radius: 30px;
-  padding-left: 100px;
+  padding-left: 10%;
   padding-right: 50%;
   margin-bottom: 50px;
   background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
 }
 .dreams .title {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: var(--white);
   -webkit-text-stroke: 1px var(--black);
@@ -545,9 +545,8 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -557,7 +556,7 @@ button {
           flex: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0px 100px;
+  padding: 2% 5%;
 }
 
 .offers-title {
