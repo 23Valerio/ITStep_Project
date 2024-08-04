@@ -222,7 +222,7 @@ nav button:hover {
   background-color: var(--black);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   header {
     padding: 15px;
   }
@@ -298,7 +298,7 @@ main {
           justify-content: center;
   height: 50vh;
   border-radius: 30px;
-  padding-left: 10%;
+  padding-left: 7.5%;
   padding-right: 50%;
   margin-bottom: 50px;
   background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
@@ -318,7 +318,7 @@ main {
 .search-bar {
   position: absolute;
   background-color: var(--white);
-  bottom: -30px;
+  bottom: -15%;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -344,6 +344,9 @@ main {
           align-items: center;
 }
 .search-bar ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,6 +357,8 @@ main {
   gap: 10px;
   position: relative;
   padding-left: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .search-bar ul li img {
   position: absolute;
@@ -370,6 +375,9 @@ main {
 }
 .search-bar ul li button i {
   color: var(--white);
+}
+.search-bar ul li:last-child {
+  padding-left: 10px;
 }
 
 .popular-destinations {
@@ -408,15 +416,6 @@ main {
 .news-subtitle {
   font-size: var(--fs16);
   color: grey;
-}
-
-.news-content:hover {
-  -webkit-transition: 500ms;
-  transition: 500ms;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .destinations {
@@ -495,6 +494,19 @@ button {
   background-color: var(--white);
 }
 
+.news-content {
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+.news-content:hover {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 .news-image {
   display: block;
   width: 100%;
@@ -508,13 +520,19 @@ button {
 
 .news-subtitle {
   margin-bottom: 12px;
+  padding-left: 10px;
 }
 
 .news-title {
+  padding-left: 10px;
   font-size: var(--fs20);
   font-weight: bold;
   color: var(--black);
   margin-bottom: 20px;
+}
+
+.news-link {
+  padding-left: 10px;
 }
 
 .offers {
@@ -545,8 +563,9 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -866,14 +885,23 @@ button {
   color: var(--white);
 }
 
+@media (max-width: 1200px) {
+  .rank {
+    font-size: calc(var(--fs16) - 4px);
+  }
+  .dreams {
+    height: 40vh;
+    padding-right: 40%;
+  }
+}
 @media (max-width: 1024px) {
   header,
   main,
   footer {
     --fs36: 30px;
     --fs28: 20px;
-    --fs20: 16px;
-    --fs16: 12px;
+    --fs20: 18px;
+    --fs16: 14px;
   }
   header,
   main {
@@ -888,7 +916,6 @@ button {
   }
   .dreams {
     height: 30vh;
-    padding: 20px 50px;
   }
   .dreams .title {
     font-size: var(--fs36);
@@ -933,8 +960,30 @@ button {
   }
 }
 @media (max-width: 768px) {
+  header,
+  main,
+  footer {
+    --fs48: 36px;
+  }
+  header nav ul li a {
+    font-size: calc(var(--fs20) - 4px);
+  }
   .dreams {
     height: 20vh;
+    padding-right: 10%;
+  }
+  .dreams .text {
+    display: none;
+  }
+  .dreams .search-bar {
+    bottom: -30%;
+  }
+  .dreams .search-bar ul li {
+    padding-left: 30px;
+  }
+  .dreams .search-bar ul li button {
+    font-size: calc(var(--fs16) - 2px);
+    padding: 10px;
   }
   .popular-destinations .destinations a {
     height: 20vh;
@@ -942,17 +991,48 @@ button {
   .popular-destinations .destinations a p {
     font-size: var(--fs36);
   }
+  .top-title {
+    font-size: calc(var(--fs20) - 2px);
+  }
   .featured-destinations ul {
     height: 25vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .purpose {
+    font-size: var(--fs16);
   }
   .offers {
     height: 20vh;
   }
+  .offers .offers-image {
+    display: none;
+  }
   .offers .offers-content {
-    padding: 0px 50px;
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .offers .offers-content .offers-title,
+  .offers .offers-content .offers-text {
+    margin-bottom: 10px;
+  }
+  .offers .offers-content .subscribe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .news .destinations .news-content .news-image {
     height: 20vh;
+  }
+  .slider-three .slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
 }
 @media (max-width: 320px) {
@@ -992,11 +1072,6 @@ button {
   .top-destinations {
     margin: 20px 0;
   }
-  .slider-three .slide {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-  }
   .luxury {
     display: none;
   }
@@ -1007,24 +1082,6 @@ button {
     margin: 10px 0px;
   }
   .featured-destinations ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: auto;
-  }
-  .offers .offers-image {
-    display: none;
-  }
-  .offers .offers-content {
-    width: 100%;
-    padding: 20px 10px;
-  }
-  .offers .offers-content .offers-title,
-  .offers .offers-content .offers-text {
-    margin-bottom: 10px;
-  }
-  .offers .offers-content .subscribe {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1032,6 +1089,7 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: auto;
   }
   .news .block-content .block-title {
     margin: 0px;
@@ -1041,7 +1099,6 @@ button {
   }
 }
 footer {
-  height: 100px;
   width: 100%;
 }
 footer a {
@@ -1111,7 +1168,8 @@ footer a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-right: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .info-block ul li a {
   font-size: 16px;
@@ -1120,9 +1178,9 @@ footer a {
   width: 20px;
 }
 .info-block ul li:nth-child(1) {
-  -webkit-box-flex: 40%;
-      -ms-flex: 40%;
-          flex: 40%;
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
 }
 .info-block ul li:nth-child(2) {
   -webkit-box-flex: 20%;
@@ -1135,9 +1193,9 @@ footer a {
           flex: 20%;
 }
 .info-block ul li:nth-child(4) {
-  -webkit-box-flex: 20%;
-      -ms-flex: 20%;
-          flex: 20%;
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
 }
 
 .social p {

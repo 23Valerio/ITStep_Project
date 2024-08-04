@@ -1,5 +1,4 @@
 footer {
-    height: 100px;
     width: 100%;
     a {
         display: inline-block;
@@ -43,20 +42,21 @@ footer {
     padding: 60px 120px;
     ul {
         display: flex;
+        
         li {
             display: flex;
             flex-direction: column;
-            padding-right: 50px;
+            box-sizing: border-box;
             a {
                 font-size: 16px;
                 img {
                     width: 20px;
                 }
             }
-            &:nth-child(1) { flex: 40%;  }
+            &:nth-child(1) { flex: 30%;  }
             &:nth-child(2) { flex: 20%;  }
             &:nth-child(3) { flex: 20%;  }
-            &:nth-child(4) { flex: 20%;  }
+            &:nth-child(4) { flex: 30%;  }
         }
     }
 }

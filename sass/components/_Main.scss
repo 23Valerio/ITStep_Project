@@ -14,7 +14,7 @@ main {
     justify-content: center;
     height: 50vh;
     border-radius: 30px; 
-    padding-left: 10%;
+    padding-left: 7.5%;
     padding-right: 50%;
     margin-bottom: 50px;
     background: url(../assets/images/beach.jpeg) 0 0/cover no-repeat;
@@ -29,7 +29,7 @@ main {
 .search-bar {
     position: absolute;
     background-color: var(--white);
-    bottom: -30px;
+    bottom: -15%;
     left: 50%;
     transform: translate(-50%);
     font-size: var(--fs16);
@@ -43,11 +43,13 @@ main {
         justify-content: space-around;
         align-items: center;
         li {
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 10px;
             position: relative;
             padding-left: 40px;
+            box-sizing: border-box;
             img {
                 position: absolute;
                 top: 10px;
@@ -62,6 +64,9 @@ main {
                 i {
                     color: var(--white);
                 }
+            }
+            &:last-child {
+                padding-left: 10px;
             }
         }
     }
@@ -91,11 +96,7 @@ main {
     font-size: var(--fs16);
     color: grey;
 }
-.news-content {
-    &:hover {
-        @include hoverBlock;
-    }
-}
+
 .destinations {
     width: 100%;
     display: grid;
@@ -148,6 +149,13 @@ button{
   align-items: center;
   background-color: var(--white);
 }
+.news-content {
+    border-radius: 20px;
+    padding-bottom: 10px;
+    &:hover {
+        @include hoverBlock;
+    }
+}
 .news-image {
     display: block;
     @include styleImage(100%, 100%, cover);
@@ -157,10 +165,15 @@ button{
 }
 .news-subtitle {
     margin-bottom: 12px;
+    padding-left: 10px;
 }
 .news-title {
+    padding-left: 10px;
     @include styleTitle(var(--fs20), bold, var(--black));
     margin-bottom: 20px;
+}
+.news-link {
+    padding-left: 10px;
 }
 
 .offers {
@@ -179,7 +192,7 @@ button{
 }
 .offers-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     flex: 50%;
     box-sizing: border-box;
@@ -394,15 +407,23 @@ button{
 }
 
 // adaptive
-
+@media (max-width: 1200px) {
+    .rank {
+        font-size: calc(var(--fs16) - 4px);
+    }
+    .dreams {
+        height: 40vh;
+        padding-right: 40%;
+    }
+}
 @media (max-width: 1024px) {
     header,
     main,
     footer {
         --fs36: 30px;
         --fs28: 20px;
-        --fs20: 16px;
-        --fs16: 12px;
+        --fs20: 18px;
+        --fs16: 14px;
     }
     header,
     main {        
@@ -420,10 +441,10 @@ button{
     }
     .dreams {
         height: 30vh;
-        padding: 20px 50px;
         .title{
             font-size: var(--fs36);
         }
+
     }
     .top-offer,
     .count-of-tours {
@@ -472,8 +493,33 @@ button{
 }
 
 @media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        --fs48: 36px;
+    }
+    header {
+        nav ul li a {font-size: calc(var(--fs20) - 4px);}
+    }
     .dreams {
         height: 20vh;
+        padding-right: 10%;
+        .text {
+            display: none;
+        }
+        .search-bar {
+            bottom: -30%;
+            ul{
+                li {
+                    padding-left: 30px;
+                    button {
+                        font-size: calc(var(--fs16) - 2px);
+                        padding: 10px;
+                    }
+                }
+            }            
+
+        }
     }
     .popular-destinations{
         .destinations {
@@ -485,15 +531,37 @@ button{
             }
         }
     }
+    .top-title {
+        font-size: calc(var(--fs20) - 2px) ;
+
+    }
     .featured-destinations {
         ul {
             height: 25vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: auto;
         }
+    }
+    .purpose {
+        font-size: var(--fs16);
     }
     .offers {
         height: 20vh;
+        .offers-image {
+            display: none;
+        }
         .offers-content {
-            padding: 0px 50px;
+            width: 100%;
+            padding: 20px 10px;
+            .offers-title,
+            .offers-text {
+                margin-bottom: 10px;
+            }
+            .subscribe {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
     .news {
@@ -504,6 +572,9 @@ button{
                 }
             }
         }
+    }
+    .slider-three .slide {
+        flex: 0 0 100%; 
     }
 }
 
@@ -550,9 +621,7 @@ button{
     .top-destinations {
         margin: 20px 0;
     }
-    .slider-three .slide {
-        flex: 0 0 100%; 
-    }
+
     .luxury {
         display: none;
     }
@@ -564,27 +633,12 @@ button{
             }
         }
         ul {
+            display: flex;
             flex-direction: column;
             height: auto;
         }
     }
-    .offers {
-        .offers-image {
-            display: none;
-        }
-        .offers-content {
-            width: 100%;
-            padding: 20px 10px;
-            .offers-title,
-            .offers-text {
-                margin-bottom: 10px;
-            }
-            .subscribe {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-    }
+
     .news {
         .block-content {
             .block-title {
