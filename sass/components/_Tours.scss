@@ -1,12 +1,29 @@
 .margine-top {
     margin-top: 50px;
 }
-.tour768 {
-    display: block;
-}
+// .tour768 {
+//     // display: block;
+// }
 .fs16 {
     font-size: var(--fs16);
 }
+.block2 {
+    height: 80vh !important;
+}
+.featured-destinations {
+
+    .display-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+// .display-grid {
+//     display: grid !important;
+//     grid-template-columns: 1fr 1fr 1fr;
+// }
+
 .adventure {
     padding-top: 25px;
     height: 40vh;
@@ -51,6 +68,19 @@
     }
 }
 
+@media (max-width: 1024px){
+    .block2 {
+        height: 100vh !important;
+    }
+    .featured-destinations {
+        .display-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+
 @media (max-width: 768px) {
     .contact-us-img {
         height: 20vh;
@@ -61,13 +91,23 @@
     .margine-top {
         margin-top: 20px;
     }
+
+}
+
+@media (max-width: 450px) {
+    .adventure {
+        flex-direction: column;
+        height: max-content;
 }
 
 @media (max-width: 320px) {
     .contact-us-img { height: 15vh;}
-    .adventure {
-    flex-direction: column;
-    height: max-content;
+    .featured-destinations {
+        .display-grid{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
     li {
         height: 20vh;
         overflow: hidden;

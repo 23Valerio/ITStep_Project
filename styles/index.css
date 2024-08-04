@@ -223,6 +223,9 @@ nav button:hover {
 }
 
 @media (max-width: 768px) {
+  .modal form ul li {
+    height: 5vh;
+  }
   header {
     padding: 15px;
   }
@@ -1215,12 +1218,16 @@ footer a {
   padding-bottom: 20px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 500px) {
   footer .info-block ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  footer .info-block ul li .social img {
+    height: 16px;
+    width: 16px;
   }
 }
 .contact-us-img {
@@ -1867,12 +1874,17 @@ button[type=submit]:hover {
   margin-top: 50px;
 }
 
-.tour768 {
-  display: block;
-}
-
 .fs16 {
   font-size: var(--fs16);
+}
+
+.block2 {
+  height: 80vh !important;
+}
+
+.featured-destinations .display-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .adventure {
@@ -1941,6 +1953,15 @@ button[type=submit]:hover {
   border-radius: 12px;
 }
 
+@media (max-width: 1024px) {
+  .block2 {
+    height: 100vh !important;
+  }
+  .featured-destinations .display-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (max-width: 768px) {
   .contact-us-img {
     height: 20vh;
@@ -1952,10 +1973,7 @@ button[type=submit]:hover {
     margin-top: 20px;
   }
 }
-@media (max-width: 320px) {
-  .contact-us-img {
-    height: 15vh;
-  }
+@media (max-width: 450px) {
   .adventure {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1965,12 +1983,21 @@ button[type=submit]:hover {
     height: -moz-max-content;
     height: max-content;
   }
-  .adventure li {
+}
+@media (max-width: 450px) and (max-width: 320px) {
+  .contact-us-img {
+    height: 15vh;
+  }
+  .featured-destinations .display-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  li {
     height: 20vh;
     overflow: hidden;
     width: 100%;
   }
-  .adventure li img {
+  li img {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -1978,7 +2005,7 @@ button[type=submit]:hover {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .adventure li .adventure-content {
+  li .adventure-content {
     width: 100%;
   }
 }

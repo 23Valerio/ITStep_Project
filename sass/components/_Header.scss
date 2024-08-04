@@ -117,6 +117,9 @@ nav {
 }
 
 @media (max-width: 768px) {
+  .modal form ul li {
+    height: 5vh;
+  }
   header {
     padding: 15px;
   }
